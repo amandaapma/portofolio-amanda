@@ -1,0 +1,257 @@
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    background-color: #FAF3E8;
+    color: #3A2E25;
+    line-height: 1.6;
+}
+
+/* HERO WRAPPER */
+.hero-wrapper {
+    height: 100vh;
+    background: 
+        linear-gradient(
+            to bottom,
+            rgba(255, 170, 90, 0.45),
+            rgba(30, 60, 90, 0.7)
+        ),
+        url("profile/homepage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 80px;
+}
+
+.logo h3 {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    font-size: 13px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav-links a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #F6B65F;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* HERO TEXT */
+.hero {
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 60px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    line-height: 1.4;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* SECTION TITLES (Global Style) */
+section h2 {
+    font-size: 32px;
+    color: #2E4057;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background: #F6B65F;
+    bottom: -10px;
+    left: 0;
+    border-radius: 2px;
+}
+
+/* ABOUT SECTION */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 10%;
+    gap: 80px;
+    background-color: #FAF3E8; 
+}
+
+.about-text {
+    max-width: 550px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    color: #554438;
+}
+
+.about-image img {
+    width: 280px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 20px 20px 0px #F6B65F; 
+}
+
+/* EXPERIENCE & SKILLS SECTION */
+.experience {
+    padding: 120px 10%;
+    background-color: #F3E6D8; 
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.experience h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.exp-skill-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.experience-box {
+    width: 350px;
+    padding: 35px;
+    background-color: white; 
+    border-radius: 25px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.4s;
+}
+
+.experience-box:hover {
+    transform: translateY(-10px);
+}
+
+.experience-box h3 {
+    margin-bottom: 15px;
+    color: #2E4057;
+}
+
+.skills-box {
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-box {
+    padding: 10px 20px;
+    background: white;
+    border: 1px solid #F6B65F;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+    cursor: default;
+}
+
+.skill-box:hover {
+    background-color: #F6B65F;
+    color: white;
+}
+
+/* CONTACT (FOOTER STYLE) */
+.contact {
+    padding: 10px 10px;
+    text-align: center;
+    background-color: #F6B65F;
+}
+
+.contact-items {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.contact-items a {
+    font-size: 15px;
+    color: #2E4057;
+    transition: 0.3s;
+}
+
+.contact-items a:hover {
+    color: #555049;
+    transform: translateY(-5px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .about, .navbar {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .nav-links a {
+        margin: 0 10px;
+    }
+    .hero-text h1 {
+        font-size: 32px;
+    }
+    .about {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .about-text h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
